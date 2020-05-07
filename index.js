@@ -35,7 +35,7 @@ function processFirstItem(stringList, callback) {
 */
 
 // counter1 code
-function counterMaker() {
+function counterMaker() {t
   let count = 0;
   return function counter() {
    return count++;
