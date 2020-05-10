@@ -88,7 +88,7 @@ let endScore = {
 }
 return endScore;
 }
-console.log(finalScore(inning(0,2),9));
+console.log(finalScore(inning(),9));
   /*Code Here*/
 
 /* Task 4: 
@@ -113,8 +113,35 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(cbInning,numOfPoints, numOfInning) {
+  let homeScore = 0;
+  let awayScore = 0;
+
+  for (var i = 1; i <= numOfInning; i++) {
+     let inning = i;
+    if (inning === 1) {
+      homeScore += Math.floor(Math.random(numOfPoints) * 3);
+      awayScore += Math.floor(Math.random(numOfPoints) * 3);
+      console.log(`${inning}st inning: ${homeScore} - ${awayScore}`);
+    } else if (inning === 2) {
+      homeScore +=Math.floor(Math.random(numOfPoints) * 3);
+      awayScore += Math.floor(Math.random(numOfPoints) * 3);
+      console.log(`${inning}nd inning: ${homeScore} - ${awayScore}`);
+    } else if (inning === 3) {
+      homeScore += Math.floor(Math.random(numOfPoints) * 3);
+      awayScore += Math.floor(Math.random(numOfPoints) * 3);
+      console.log(`${inning}rd inning: ${homeScore} - ${awayScore}`);
+    } else if (inning > 3 && inning !== numOfInning) {
+      homeScore += Math.floor(Math.random(numOfPoints) * 3);
+      awayScore += Math.floor(Math.random(numOfPoints) * 3);
+      console.log(`${inning}th inning: ${homeScore} - ${awayScore}`);
+    } else if (inning === numOfInning) {
+      homeScore += Math.floor(Math.random(numOfPoints) * 3);
+      awayScore += Math.floor(Math.random(numOfPoints) * 3);
+      console.log(`${inning}th inning: ${homeScore} - ${awayScore}`);
+      console.log(`Final Score: ${homeScore} - ${awayScore}`);
+    }
+  }
 }
 
-
+(scoreboard(inning,finalScore,9));
