@@ -35,7 +35,7 @@ function processFirstItem(stringList, callback) {
 */
 
 // counter1 code
-function counterMaker() {t
+function counterMaker() {
   let count = 0;
   return function counter() {
    return count++;
@@ -57,11 +57,10 @@ function counter2() {
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
 function inning(/*Code Here*/){
-
-    /*Code Here*/
-
+return Math.floor(Math.random() * 3);
+    /*Code Herce*/
 }
-
+console.log(inning());
 /* Task 3: finalScore()
 
 Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and and returns the final score of the game in the form of an object.
@@ -76,11 +75,21 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(/*code Here*/cbInning,numOfInning){
+let homePts = 0;
+let awayPts = 0;
 
-  /*Code Here*/
-
+for (let i = 0; i < numOfInning; i++); {
+  homePts += Math.floor(Math.random(cbInning) * numOfInning);
+  awayPts += Math.floor(Math.random(cbInning) * numOfInning);
 }
+let endScore = {
+ Home: homePts, Away: awayPts
+}
+return endScore;
+}
+console.log(finalScore(inning(0,2),9));
+  /*Code Here*/
 
 /* Task 4: 
 
