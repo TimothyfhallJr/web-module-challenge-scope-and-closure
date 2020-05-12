@@ -27,11 +27,13 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * counter1 invokes counterMaker()/ we assigned counterMaker() to the const counter1;
+ * counter2 wont work with the counterMaker() function. only grabs and manipulates the let count=0;
  * 2. Which of the two uses a closure? How can you tell?
- * 
- * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * counter1 uses closure, because it goes back to counterMaker() which has another    function inside of it that is used by counter1
  *
+ * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ *counter1 would be useful in updating the counter constantly, while counter to always begins at 0.
 */
 
 // counter1 code
