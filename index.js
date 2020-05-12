@@ -116,34 +116,34 @@ and returns the score at each pont in the game, like so:
 Final Score: awayTeam - homeTeam */
 
 function scoreboard(cbInning,numOfPoints, numOfInning) {
-  let homeScore = 0;
-  let awayScore = 0;
+  let home = 0;
+  let away = 0;
 
   for (var i = 1; i <= numOfInning; i++) {
      let inning = i;
     if (inning === 1) {
-      homeScore += Math.floor(Math.random(numOfPoints) * 3);
-      awayScore += Math.floor(Math.random(numOfPoints) * 3);
-      console.log(`${inning}st inning: ${homeScore} - ${awayScore}`);
+      home += Math.floor(Math.random(numOfPoints) * 3);
+      away += Math.floor(Math.random(numOfPoints) * 3);
+      console.log( `${inning}st inning: ${home} - ${away}`);
     } else if (inning === 2) {
-      homeScore +=Math.floor(Math.random(numOfPoints) * 3);
-      awayScore += Math.floor(Math.random(numOfPoints) * 3);
-      console.log(`${inning}nd inning: ${homeScore} - ${awayScore}`);
+      home +=Math.floor(Math.random(numOfPoints) * 3);
+      away += Math.floor(Math.random(numOfPoints) * 3);
+      console.log(`${inning}nd inning: ${home} - ${away}`);
     } else if (inning === 3) {
-      homeScore += Math.floor(Math.random(numOfPoints) * 3);
-      awayScore += Math.floor(Math.random(numOfPoints) * 3);
-      console.log(`${inning}rd inning: ${homeScore} - ${awayScore}`);
+      home += Math.floor(Math.random(numOfPoints) * 3);
+      away += Math.floor(Math.random(numOfPoints) * 3);
+      console.log(`${inning}rd inning: ${home} - ${away}`);
     } else if (inning > 3 && inning !== numOfInning) {
-      homeScore += Math.floor(Math.random(numOfPoints) * 3);
-      awayScore += Math.floor(Math.random(numOfPoints) * 3);
-      console.log(`${inning}th inning: ${homeScore} - ${awayScore}`);
+      home += Math.floor(Math.random(numOfPoints) * 3);
+      away += Math.floor(Math.random(numOfPoints) * 3);
+      console.log(`${inning}th inning: ${home} - ${away}`);
     } else if (inning === numOfInning) {
-      homeScore += Math.floor(Math.random(numOfPoints) * 3);
-      awayScore += Math.floor(Math.random(numOfPoints) * 3);
-      console.log(`${inning}th inning: ${homeScore} - ${awayScore}`);
-      console.log(`Final Score: ${homeScore} - ${awayScore}`);
+      home += Math.floor(Math.random(numOfPoints) * 3);
+      away += Math.floor(Math.random(numOfPoints) * 3);
+     console.log( `${inning}th inning: ${home} - ${away}`);
+     return `Final Score: ${home} - ${away}`;
     }
   }
 }
 
-(scoreboard(inning,finalScore,9));
+console.log(scoreboard(inning,finalScore,9));
