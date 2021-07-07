@@ -42,6 +42,7 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+a  closure makes it so whatever variables or functions you used within that function stay within that function and cannot be used anywhere else .
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,9 +64,13 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+Anonymous function.
+    It was created while personalDice was being executed.
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+The ${name} will stay the same while the ${newRoll} can always change.
 c. What is the lexical scope of `newRoll`? 
 
+The lexical scope of newRoll is a function in the return statement of 'personalDice' only.
 ### Task 3 - Stretch Goals
 
 After you have completed the requirements, **create** a new file called `stretch.js` and practice more with closures. There are no tests for these problems.

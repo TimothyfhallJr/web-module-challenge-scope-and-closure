@@ -27,11 +27,13 @@ function processFirstItem(stringList, callback) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * counter1 invokes counterMaker()/ we assigned counterMaker() to the const counter1;
+ * counter2 wont work with the counterMaker() function. only grabs and manipulates the let count=0;
  * 2. Which of the two uses a closure? How can you tell?
- * 
- * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * counter1 uses closure, because it goes back to counterMaker() which has another    function inside of it that is used by counter1
  *
+ * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ *counter1 would be useful in updating the counter constantly, while counter to always begins at 0.
 */
 
 // counter1 code
@@ -57,11 +59,10 @@ function counter2() {
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
 function inning(/*Code Here*/){
-
-    /*Code Here*/
-
+return Math.floor(Math.random() * 3);
+    /*Code Herce*/
 }
-
+console.log(inning());
 /* Task 3: finalScore()
 
 Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and and returns the final score of the game in the form of an object.
@@ -76,11 +77,21 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(/*code Here*/cbInning,numOfInning){
+let homePts = 0;
+let awayPts = 0;
 
-  /*Code Here*/
-
+for (let i = 0; i < numOfInning; i++); {
+  homePts += Math.floor(Math.random(cbInning) * numOfInning);
+  awayPts += Math.floor(Math.random(cbInning) * numOfInning);
 }
+let endScore = {
+ Home: homePts, Away: awayPts
+}
+return endScore;
+}
+console.log(finalScore(inning(),9));
+  /*Code Here*/
 
 /* Task 4: 
 
@@ -104,8 +115,35 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(cbInning,numOfPoints, numOfInning) {
+  let home = 0;
+  let away = 0;
+
+  for (var i = 1; i <= numOfInning; i++) {
+     let inning = i;
+    if (inning === 1) {
+      home += Math.floor(Math.random(numOfPoints) * 3);
+      away += Math.floor(Math.random(numOfPoints) * 3);
+      console.log( `${inning}st inning: ${home} - ${away}`);
+    } else if (inning === 2) {
+      home +=Math.floor(Math.random(numOfPoints) * 3);
+      away += Math.floor(Math.random(numOfPoints) * 3);
+      console.log(`${inning}nd inning: ${home} - ${away}`);
+    } else if (inning === 3) {
+      home += Math.floor(Math.random(numOfPoints) * 3);
+      away += Math.floor(Math.random(numOfPoints) * 3);
+      console.log(`${inning}rd inning: ${home} - ${away}`);
+    } else if (inning > 3 && inning !== numOfInning) {
+      home += Math.floor(Math.random(numOfPoints) * 3);
+      away += Math.floor(Math.random(numOfPoints) * 3);
+      console.log(`${inning}th inning: ${home} - ${away}`);
+    } else if (inning === numOfInning) {
+      home += Math.floor(Math.random(numOfPoints) * 3);
+      away += Math.floor(Math.random(numOfPoints) * 3);
+     console.log( `${inning}th inning: ${home} - ${away}`);
+     return `Final Score: ${home} - ${away}`;
+    }
+  }
 }
 
-
+console.log(scoreboard(inning,finalScore,9));
